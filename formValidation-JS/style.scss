@@ -1,0 +1,55 @@
+@mixin forIcon {
+  position: absolute;
+  top: 2.9rem;
+  right: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+@mixin forIconTwo {
+  @include forIcon();
+}
+
+#password-field {
+  position: relative;
+  .show-password-icon-one {
+    @include forIcon();
+  }
+  .hide-password-icon-one {
+    @include forIcon();
+  }
+}
+//
+#repeat-password-field {
+  position: relative;
+  .show-password-icon-two {
+    @include forIconTwo();
+  }
+  .hide-password-icon-two {
+    @include forIconTwo();
+  }
+}
+
+.hide {
+  display: none;
+  opacity: 0;
+}
+
+#final-text {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  transition: opacity 1s;
+}
+
+#final-button {
+  padding: 10px 20px;
+  font-size: 25px;
+  background-color: transparent;
+  border: 1px solid black;
+}
+
+
